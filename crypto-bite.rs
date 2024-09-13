@@ -4,15 +4,11 @@
 //! It covers core blockchain concepts such as transactions, blocks, proof of work, and
 //! chain validation.
 //! 
-//! ## Quick Start
-//! 
 //! To get started with this project:
 //! 
 //! 1. Clone the repository
 //! 2. Run `cargo build` to compile the project
 //! 3. Run `cargo run` to execute the example in the `main` function
-//! 
-//! For more details on usage and implementation, please consult the documentation.
 
 use sha2::{Digest, Sha256};
 use chrono::Utc;
@@ -136,8 +132,77 @@ fn main() {
     blockchain.new_transaction(String::from("Alice"), String::from("Charlie"), 0.3);
     let block = blockchain.new_block(proof);
     println!("New block forged: {:?}", block);
+    // Mine the third block
+    println!("Mining third block...");
+    let last_proof = blockchain.last_block().proof;
+    let proof = blockchain.proof_of_work(last_proof);
+    blockchain.new_transaction(String::from("Bob"), String::from("David"), 0.2);
+    blockchain.new_transaction(String::from("Charlie"), String::from("Eve"), 0.1);
+    let block = blockchain.new_block(proof);
+    println!("New block forged: {:?}", block);
+    // Mine the fourth block
+    println!("Mining fourth block...");
+    let last_proof = blockchain.last_block().proof;
+    let proof = blockchain.proof_of_work(last_proof);
+    blockchain.new_transaction(String::from("David"), String::from("Frank"), 0.3);
+    blockchain.new_transaction(String::from("Eve"), String::from("Grace"), 0.2);
+    let block = blockchain.new_block(proof);
+    println!("New block forged: {:?}", block);
+
+    // Mine the fifth block
+    println!("Mining fifth block...");
+    let last_proof = blockchain.last_block().proof;
+    let proof = blockchain.proof_of_work(last_proof);
+    blockchain.new_transaction(String::from("Frank"), String::from("Henry"), 0.4);
+    blockchain.new_transaction(String::from("Grace"), String::from("Ivy"), 0.1);
+    let block = blockchain.new_block(proof);
+    println!("New block forged: {:?}", block);
+
+    // Mine the sixth block
+    println!("Mining sixth block...");
+    let last_proof = blockchain.last_block().proof;
+    let proof = blockchain.proof_of_work(last_proof);
+    blockchain.new_transaction(String::from("Henry"), String::from("Jack"), 0.2);
+    blockchain.new_transaction(String::from("Ivy"), String::from("Kelly"), 0.3);
+    let block = blockchain.new_block(proof);
+    println!("New block forged: {:?}", block);
+
+    // Mine the seventh block
+    println!("Mining seventh block...");
+    let last_proof = blockchain.last_block().proof;
+    let proof = blockchain.proof_of_work(last_proof);
+    blockchain.new_transaction(String::from("Jack"), String::from("Liam"), 0.5);
+    blockchain.new_transaction(String::from("Kelly"), String::from("Mia"), 0.1);
+    let block = blockchain.new_block(proof);
+    println!("New block forged: {:?}", block);
+
+    // Mine the eighth block
+    println!("Mining eighth block...");
+    let last_proof = blockchain.last_block().proof;
+    let proof = blockchain.proof_of_work(last_proof);
+    blockchain.new_transaction(String::from("Liam"), String::from("Noah"), 0.3);
+    blockchain.new_transaction(String::from("Mia"), String::from("Olivia"), 0.2);
+    let block = blockchain.new_block(proof);
+    println!("New block forged: {:?}", block);
+
+    // Mine the ninth block
+    println!("Mining ninth block...");
+    let last_proof = blockchain.last_block().proof;
+    let proof = blockchain.proof_of_work(last_proof);
+    blockchain.new_transaction(String::from("Noah"), String::from("Peter"), 0.4);
+    blockchain.new_transaction(String::from("Olivia"), String::from("Quinn"), 0.1);
+    let block = blockchain.new_block(proof);
+    println!("New block forged: {:?}", block);
+
+    // Mine the tenth block
+    println!("Mining tenth block...");
+    let last_proof = blockchain.last_block().proof;
+    let proof = blockchain.proof_of_work(last_proof);
+    blockchain.new_transaction(String::from("Peter"), String::from("Rachel"), 0.2);
+    blockchain.new_transaction(String::from("Quinn"), String::from("Sam"), 0.3);
+    let block = blockchain.new_block(proof);
+    println!("New block forged: {:?}", block);
 
     // Display the entire blockchain
     println!("Blockchain: {:?}", blockchain.chain);
 }
-
