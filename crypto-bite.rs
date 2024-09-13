@@ -4,8 +4,6 @@
 //! It covers core blockchain concepts such as transactions, blocks, proof of work, and
 //! chain validation.
 //! 
-//! For detailed documentation, please refer to the `DOCUMENTATION.md` file in the project root.
-//! 
 //! ## Quick Start
 //! 
 //! To get started with this project:
@@ -14,7 +12,7 @@
 //! 2. Run `cargo build` to compile the project
 //! 3. Run `cargo run` to execute the example in the `main` function
 //! 
-//! For more information on usage and implementation details, please consult the documentation.
+//! For more details on usage and implementation, please consult the documentation.
 
 use sha2::{Digest, Sha256};
 use chrono::Utc;
