@@ -1,4 +1,4 @@
-This is a basic implementation of a cryptocurrency in Rust. Here's a breakdown of the main components:
+This is a basic implementation of a blockchain in Rust. Here's a breakdown of the main components:
 
 Transaction: Represents a transfer of coins from a sender to a recipient.
 Block: Contains a list of transactions and metadata like index, timestamp, and previous block's hash.
